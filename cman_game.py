@@ -133,7 +133,16 @@ class Game():
 		if self.state != State.WIN:
 			self.state = State.WIN
 			self.winner = player
-		return get_winner()
+		return self.get_winner()
+	
+	def get_collected_points_count(self):
+		"""
+		Returns the number of points collected so far in the game.
+
+		Returns:
+		int: The number of collected points.
+		"""
+		return sum(1 for value in self.points.values() if value == 0)
 
 	def can_move(self, player):
 		"""

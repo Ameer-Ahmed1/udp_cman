@@ -1,7 +1,8 @@
-import pynput, time, msvcrt
+import pynput, time
 
 def _flush_input():
     try:
+        import msvcrt
         while msvcrt.kbhit():
             msvcrt.getch()
     except ImportError:
